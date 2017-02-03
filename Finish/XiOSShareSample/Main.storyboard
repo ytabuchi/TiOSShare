@@ -17,9 +17,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <subviews/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="56" width="560" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7" translatesAutoresizingMaskIntoConstraints="NO">
+                                <rect key="frame" x="20" y="290" width="560" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint id="4" firstItem="3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="36"/>
+                            <constraint id="5" firstItem="3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="6" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" constant="20"/>
+                            <constraint id="11" firstItem="7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY"/>
+                            <constraint id="12" firstItem="7" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20"/>
+                            <constraint id="13" firstItem="8bC-Xf-vdC" firstAttribute="trailing" secondItem="7" secondAttribute="trailing" constant="20"/>
+                        </constraints>
                     </view>
-                    <connections/>
+                    <connections>
+                        <outlet property="ViewShareButton" destination="3" id="name-outlet-3"/>
+                        <outlet property="ShareInfoLabel" destination="7" id="name-outlet-7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

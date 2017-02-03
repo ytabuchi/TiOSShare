@@ -13,8 +13,25 @@ namespace XiOSShareSample
     [Register ("ViewController")]
     partial class ViewController
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ShareInfoLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton ViewShareButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (ShareInfoLabel != null) {
+                ShareInfoLabel.Dispose ();
+                ShareInfoLabel = null;
+            }
+
+            if (ViewShareButton != null) {
+                ViewShareButton.Dispose ();
+                ViewShareButton = null;
+            }
         }
     }
 }

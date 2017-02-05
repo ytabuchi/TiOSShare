@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Foundation;
 using UIKit;
 
@@ -60,14 +61,19 @@ namespace XiOSShareSample
         {
             try
             {
-                Console.WriteLine(url);
-
-
+                if (url.Scheme == "file")
+                {
+                    FileData.FileName = url.AbsoluteString.Split('/').Last();
+                }
+                else if (url.Scheme == "MyApp")
+                {
+                    // CustomUrlSchemeの対応
+                }
                 return true;
             }
             catch (Exception ex)
             {
-                
+                System.Diagnostics.Debug.WriteLine(ex.InnerException);
             }
             return false;
         }

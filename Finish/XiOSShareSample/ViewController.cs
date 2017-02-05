@@ -1,5 +1,5 @@
 ﻿using System;
-
+using System.IO;
 using UIKit;
 
 namespace XiOSShareSample
@@ -14,7 +14,22 @@ namespace XiOSShareSample
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            ViewShareButton.TouchUpInside += (sender, e) =>
+            {
+                if (!string.IsNullOrEmpty(FileData.FileName))
+                {
+                    var dir = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+                    var file = Path.Combine(dir, "Inbox", FileData.FileName);
+                    var text = File.ReadAllText(file);
+
+                    ShareInfoLabel.Text = text;
+                }
+                else
+                {
+                    ShareInfoLabel.Text = "No shared file.";
+                }
+            };
         }
 
         public override void DidReceiveMemoryWarning()
